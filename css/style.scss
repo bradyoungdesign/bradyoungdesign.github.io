@@ -110,7 +110,36 @@
         //     display: none;
         // }
     }
+    .subtitle-container{
+        width: 100%;
+        position: relative;
+        .subtitle{
+            width: 100%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .subtitle{
+            opacity: 0;
+            // animation: fade-out ease-in-out 2s infinite;
+        }
+        .subtitle-fade{
+            opacity: 0;
+        }
+        // #fadetext2{
+        //     animation: fade-out ease-in-out 5s infinite;
+        //     animation-delay: 1s;
+        // }
+    }
 
+    @keyframes fade-in {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+    @keyframes fade-out {
+        50% { opacity: 1; }
+        100% { opacity: 0; }
+    }
 }
 
 .section-title-container{
@@ -418,7 +447,7 @@
         padding:5rem;
         .home-title-container{
             flex-basis: 65%;
-            padding-right: 4rem;
+            // padding-right: 4rem;
         }
         .home-title{
             height: fit-content;

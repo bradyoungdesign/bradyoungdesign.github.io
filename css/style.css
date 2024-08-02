@@ -416,6 +416,38 @@ footer h6 {
 .home .home-img-container {
   display: none;
 }
+.home .subtitle-container {
+  width: 100%;
+  position: relative;
+}
+.home .subtitle-container .subtitle {
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.home .subtitle-container .subtitle {
+  opacity: 0;
+}
+.home .subtitle-container .subtitle-fade {
+  opacity: 0;
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-out {
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 
 .section-title-container {
   padding: 1rem;
@@ -672,7 +704,6 @@ footer h6 {
   }
   .home .home-title-container {
     flex-basis: 65%;
-    padding-right: 4rem;
   }
   .home .home-title {
     height: -moz-fit-content;
