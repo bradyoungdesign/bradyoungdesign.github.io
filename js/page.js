@@ -7,6 +7,7 @@ function scrollDown(){
 }
 
 scrollBtn.addEventListener('click', function(){
+    window.location.href = "https://bradyoungdesign.github.io/";
     scrollDown();
 });
 

@@ -1,16 +1,8 @@
 @import "_global.scss";
 
 .project{
-    padding-top: 7rem;
+    padding-top: 4rem;
     position: relative;
-}
-
-.logo-light{
-    display: block !important;
-}
-
-.nav-logo-container{
-    background-color: $navy !important;
 }
 
 .project-wrap{
@@ -24,8 +16,9 @@
     width: 100%;
     max-width: 60rem;
     h1{
-        font-family: $manrope;
-        text-transform: none;
+        // font-family: $manrope;
+        // text-transform: lowercase;
+        
         font-weight: 800;
         font-size: 2.8rem;
         padding: 0;
@@ -81,6 +74,19 @@
     }
 }
 
+h4{
+    padding: 1rem 0;
+    font-family: $ptsans;
+    font-weight: 600;
+}
+
+p{
+    padding: 0 0 1.5rem 0;
+    font-weight: 500;
+    font-size: 1rem;
+    font-family: $manrope;
+}
+
 .text-section{
     padding-bottom: 2rem;
     width: 100%;
@@ -88,11 +94,7 @@
         padding-bottom: 1rem;
         font-size: 1.5rem;
     }
-    p{
-        padding: 0 0 1.5rem 0;
-        // font-weight: 500;
-        font-size: 1rem;
-    }
+
     img{
         width: 100%;
         margin-bottom: 2rem;
@@ -100,10 +102,6 @@
     // .sub-title{
     //     font-weight: 700;
     // }
-    h4{
-        padding: 1rem 0;
-
-    }
     .sub-text-container{
         padding-bottom: 2rem;
     }
@@ -240,10 +238,10 @@
           margin-bottom: 1rem;
         }
         h3{
-            padding-bottom: 1rem;
+            padding-bottom: 0.5rem;
             line-height: 150%;
             color: $gray;
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
         .active{
             color: $navy;
@@ -255,20 +253,27 @@
           }
         }
       }
-    .project-title{
-        width: 100%;
-        padding-left: 20rem;
-        max-width: 80rem;
-        // text-align: right;
-        h1{
-            font-size: 4.5rem;
-            width: 100%;
-            margin-top: 0;
+    // .project-title{
+    //     width: 100%;
+    //     padding-left: 20rem;
+    //     max-width: 80rem;
+    //     // text-align: right;
+    //     h1{
+    //         font-size: 4.5rem;
+    //         width: 100%;
+    //         margin-top: 0;
+    //     }
+    // }
+    .main-content{
+        .main-img{
+            display: flex;
+            justify-content: center;
+            // border: thin solid red;
         }
     }
 
-
-
-
-    
+    .project{
+        padding-top: 2rem;
+        position: relative;
+    }
 }

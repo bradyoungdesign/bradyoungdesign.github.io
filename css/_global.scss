@@ -1,34 +1,19 @@
-@mixin font($font-family, $font-file) {
-    @font-face {
-      font-family: $font-family;
-      src: url($font-file+'.woff') format('woff'),
-           url($font-file+'.woff2') format('woff2');
-      font-weight: normal;
-      font-style: normal;
-    }
-}
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Manrope:wght@200..800&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Phudu:wght@300..900&display=swap');
 
-@include font('Akira', '../fonts/AkiraExpanded-SuperBold');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Phudu:wght@300..900&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Phudu:wght@300..900&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&display=swap');
-
-$akira: 'Akira';
-$mont: 'Montserrat', sans-serif;
-$inter: 'Inter', sans-serif;
 $manrope: 'Manrope', sans-serif;
-$syne: 'Syne', sans-serif;
-$josefin: 'Josefin Sans', sans-serif;
+$phudu: 'Phudu', sans-serif;
+$ptsans: 'PT Sans', sans-serif;
 
-$navy:#151635;
-$dark-navy:#060828;
-$darkest-navy:#040521;
+$navy:#151F35;
+// $dark-navy:#060828;
 $light1:#F9F9F9;
-$red:#CE3615;
+$red:#E35353;
 $gray: #CDCDCD;
+$off-white: #FEFFFB;
 
 * {
 	vertical-align: baseline;
@@ -47,7 +32,7 @@ body{
   font-weight: normal;
   list-style-type: none;
   text-decoration: none;
-  color: $navy;
+  background-color: $off-white;
 }
 
 .wrap{
@@ -57,13 +42,7 @@ body{
 }
 
 nav{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 999;
-  opacity: 100%;
-  transition: opacity ease 0.3s;
+  border-bottom: 0.15rem solid $navy;
 }
 
 .nav-bar{
@@ -72,30 +51,23 @@ nav{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  // background: rgba(255, 255, 255, 0.19);
-  // backdrop-filter: blur(7.8px);
-  // -webkit-backdrop-filter: blur(7.8px);
 }
 
 .nav-list{
   display: flex;
-  // width: 100%;
   flex-grow: 1;
   justify-content: flex-end;
   align-items: center;
   height: 100%;
-  // padding: 0 5rem;
 }
 
 .nav-item{
   padding: 0;
-  // padding-right: 1.5rem;
   display: flex;
   h3{
       display: flex;
-      color: $light1;
       transition: color ease 0.3s;
-      font-family: $manrope;
+      font-family: $ptsans;
       text-transform: none;
       font-weight: 700;
   }
@@ -131,8 +103,6 @@ nav{
 .nav-logo-container{
   max-width: 3rem;
   padding: 1rem;
-  // border: thin solid $navy;
-  background-color: $light1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -142,108 +112,10 @@ nav{
   }
 }
 
-.fixed-nav{
-  position: fixed;
-  animation-name: nav-fade-in;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-}
-
-@keyframes nav-fade-in {
-  0%{background: transparent;}
-  100%{  background: rgba(255, 255, 255, 0.05);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
-    backdrop-filter: blur(11px);
-    -webkit-backdrop-filter: blur(11px);}
-}
-@keyframes fade-in {
-  0%{opacity: 0;}
-  100%{opacity: 1;}
-}
-@keyframes line-long-anim {
-  0%{height: 0;}
-  100%{height: 18rem;}
-}
-@keyframes line-short-anim {
-  0%{height: 0;}
-  100%{height: 10rem;}
-}
-
 .hide{
   display: none;
   opacity: 0;
   // transition: opacity ease 0.3s;
-}
-
-.logo-dark{
-  display: block;
-}
-.logo-light{
-  display: none;
-}
-
-.dropdown{
-  position: relative;
-  .dropdown-menu{
-    position: absolute;
-    opacity: 0;
-    visibility: hidden;
-    left: 1.5rem;
-    top: 4rem;
-    transition: visibility ease 0.3s, opacity ease 0.3s;
-    width: 150%;
-    background-color: $light1;
-    padding: 1rem 0;
-    a{
-      width: 100%;
-      text-align: left;
-      margin: 0;
-      padding: 0;
-      h3{
-      padding: 1rem 0 1rem 2rem;
-      width: 100%;
-      margin: 0;
-      color: $navy;
-      &:hover{
-        color: $red;
-      }
-      }
-    }
-  }
-  &:hover{
-    .dropdown-menu{
-      opacity: 100%;
-      visibility: visible;
-    }
-    .nav-link{
-      ::after{
-        width: 60%;
-        background-color: $red;
-      }
-    }
-  }
-}
-
-.dark-nav{
-  .logo-dark{
-    display: none;
-  }
-  .nav-link-text{
-    color: $navy;
-  }
-  .dropdown{
-    .dropdown-menu{
-      background-color: $navy;
-      a{
-        h3{
-        color: $light1;
-        &:hover{
-          color: $red;
-        }
-        }
-      }
-    }
-  }
 }
 
 .active{
@@ -267,13 +139,23 @@ h1,h2,h3,h4,h5,h6,p{
 
 h1{
   // font-family: 'Akira';
-  font-family: $josefin;
-  text-transform: uppercase;
-  font-weight: 700;
+  font-family: $phudu;
+  // text-transform: uppercase;
+  // font-weight: 700;
 }
 
-h2,h3, h4{
+h2{
+  font-family: $phudu;
+}
+
+h3{
+  font-family: $ptsans;
+  font-weight: 600;
+}
+
+h4{
   font-family: $manrope;
+  font-weight: 300;
 }
 
 h5{
@@ -296,38 +178,14 @@ a{
   text-decoration: none;
 }
 
-.light-title{
-  color: $light1;
+.divider{
+  border-top: 0.15rem solid $navy;
+  max-width: 85rem;
+  margin: auto;
 }
 
-.spacer{
-  padding: 0 1em;
-  position: relative;
-  &::after{
-      content: "";
-      position: absolute;
-
-  }
-}
-
-.outline-shape{
-  border: thin solid $navy;
-}
-.fill-shape{
-  background-color: $navy;
-  border: thin solid $navy;
-}
-.fill-shape-red{
-  background-color: $red;
-  border: thin solid $red;
-}
-.outline-fill-shape-red{
-  border: thin solid $navy;
-  background-color: $red;
-}
-
-.side-links{
-  display: none;
+#scroll-btn{
+  cursor: pointer;
 }
 
 @keyframes scrollTop {
@@ -335,73 +193,68 @@ a{
   100% {height: 18rem;}
 }
 
-.scroll-top-side{
-  position: fixed;
-  right: 1rem;
-  bottom: 4rem;
-  width: 5rem;
-  height: 10rem;
-  z-index: 998;
-  cursor: pointer;
-  .scroll-top-elements{
-    position: relative;
-    width: 100%;
-    height: 100%;
+.intro{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  min-height: 20rem;
+  // overflow-x: hidden;
+  padding: 2rem 0;
+  margin: auto;
+  .intro-title-container{
+      padding: 0 1rem 0 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
   }
-  .scroll-shape-thin{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    height: 8rem;
-    width: 0.1rem;
-    background-color: $navy;
+  .intro-title{
+      height: 6rem;
   }
-  .scroll-shape-thick{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    height: 3rem;
-    width: 0.5rem;
-    background-color: $red;
-    transition: bottom ease 0.3s, height ease 0.2s;
+  .intro-caption-container{
+    padding: 0 1rem;
   }
-  h4{
-    position: absolute;
-    display: flex;
-    width: 4.8rem;
-    transform: rotate(90deg);
-    right: -1rem;
-    bottom: 2rem;
-    transition: bottom ease 0.3s;
-  }
-  &:hover{
-    h4{
-      bottom: 2.5rem;
-    }
-    .scroll-shape-thick{
-      height: 5rem;
-      bottom: 0.5rem;
-    }
-    .scroll-shape-thin{
-      animation-name: scrollTop;
-      animation-duration: 2s;
-      animation-iteration-count: infinite;
-    }
+  h1{
+      display: inline;
+      font-size: 2.5em;
+      font-family: $phudu;
+      font-weight: 800;
+      line-height: 60%;
+      // font-size: clamp(2rem, 6vw, 6rem);
+      span{
+          display: inline;
+          line-height: 0;
+          font-size: 1.5rem;
+          font-family: $manrope;
+          font-weight: 500;
+      }
   }
 }
 
 footer{
   background-color: $navy;
-  // padding-top: 10rem;
-  padding: 2rem;
+  padding: 3rem 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: left;
+  align-items: left;
+    .msg-container{
+      padding: 2rem 0;
+      background-color: $navy;
+      h1{
+          color: $light1;
+          font-size: 2rem;
+      }
+  }
+  .footer-link-container{
+    display: flex;
+    flex-direction: row;
+  }
   a{
       display: flex;
       align-items: center;
-      padding: 1rem 0;
+      padding-right: 1.5rem;
       &:hover{
         i, h5{
           color: $red;
@@ -410,15 +263,14 @@ footer{
       i{
         transition: color ease 0.3s;
         color: $light1;
-        opacity: 50%;
-      }
-      h5{
-        transition: color ease 0.3s;
-        padding-left: 0.8rem;
-        color: $light1;
+        opacity: 90%;
         font-size: 1.5rem;
-
       }
+  }
+  h5{
+    padding-top: 2rem;
+    color: $light1;
+    opacity: 100%;
   }
   h6{
     padding-top: 2rem;
@@ -427,47 +279,7 @@ footer{
   }
 }
 
-.light-icon{
-  color: $light1 !important ;
-}
-
-.fade-in{
-  animation-name: fade-in;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-}
-.show-long-line{
-  animation-name: line-long-anim;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-}
-.show-short-line{
-  animation-name: line-short-anim;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-}
-
 @media only screen and (min-width: 786px) {
-  .logo-dark{
-    display: block;
-  }
-  .logo-light{
-      display: none;
-  }
-  .nav-logo-container{
-      background-color: $light1;
-  }
-  .nav{
-    display: flex;
-  }
-  .nav-item{
-    padding: 0 1.5rem;
-    // padding-right: 1.5rem;
-  }
-  .nav-bar{
-    width: 100%;
-    padding: 1rem 2rem;
-  }
   .section-wrap{
     padding: 4rem;
   }
@@ -475,18 +287,57 @@ footer{
     right: 6.5rem;
   }
   footer{
-    .footer-link-container{
-      display: flex;
-      padding: 2rem;
-      width: 80%;
-      max-width: 40rem;
-      justify-content: space-around;
-      // padding: 0 10rem;
+    .msg-container{
+        h1{
+            color: $light1;
+            font-size: 2rem;
+            max-width: 25rem;
+        }
     }
-    h6{
-      font-size: 1rem;
+    h5{
+      padding: 0;
+    }
+    .footer-section-container{
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+      align-items: center;
     }
   }
+
+  .intro{
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 10rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    // width: 100%;
+    .intro-title-container{
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        // flex-wrap: wrap;
+        justify-content: start;
+        flex-basis: 60%;
+    }
+    .intro-title{
+        text-align: left;
+        // width: 50%;
+        z-index: 10;
+        h1{
+            font-size: 2.3rem;
+            line-height: 120%;
+            span{
+                font-size: 2rem;
+            }
+        }
+    }
+    .intro-caption-container{
+      flex-basis: 50%;
+    }
+}
 
 }
 
@@ -496,47 +347,41 @@ footer{
       padding: 5rem 10rem;
   }
   .nav-bar{
-    width: 100%;
-    padding: 1rem 4rem;
+    max-width: 82rem;
+    padding: 1rem 0;
+    img{
+      padding: 0;
+    }
   }
-  .side-links{
-    position: fixed;
-    z-index: 100;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    left: 4rem;
-    bottom: 3rem;
-    a{
-      padding: 1rem;
-      i{
-        color: $navy;
-        transition: color ease 0.3s;
+
+  .intro{
+      max-width: 80rem;
+  }
+  .intro{
+      padding:5rem;
+      .intro-title-container{
+          flex-basis: 65%;
+          padding-right: 4rem;
       }
-      &:hover{
-        i{
-          color: $red;
+      .intro-title{
+          height: fit-content;
+          h1{
+              font-size: 3.5rem;
+              line-height: 120%;
+          }
+      }
+      .intro-caption-container{
+        h4{
+          font-size: 1.5rem;
+          font-weight: 500;
+          line-height: 150%;
         }
       }
-    }
-    .line-container{
-      position: relative;
-    }
-    .long-line{
-      position: absolute;
-      display: flex;
-      z-index: 300;
-      bottom: 0;
-      width: 0.1rem;
-      background: $light1;
-    }
-    .short-line{
-      position: absolute;
-      width: 0.3rem;
-      bottom: 0;
-      left: 0.1rem;
-      background: $red;
-      z-index: 900;
-    }
+  }
+
+  .footer-container{
+    margin: auto;
+    width: 100%;
+    max-width: 80rem;
   }
 }
