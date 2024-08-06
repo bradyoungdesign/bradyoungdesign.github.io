@@ -42,14 +42,11 @@
   }
   .grid .grid-container .grid-item {
     padding: 0;
-    height: 100%;
-    width: 100%;
     flex-basis: 33.33%;
   }
   .grid .grid-container .grid-item img, .grid .grid-container .grid-item video {
     -o-object-fit: cover;
        object-fit: cover;
-    height: 100%;
     width: 100%;
   }
   .grid .grid-container .last-grid-item {

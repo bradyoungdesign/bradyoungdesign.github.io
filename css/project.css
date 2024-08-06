@@ -85,7 +85,6 @@ nav {
 
 .nav-logo-container {
   max-width: 3rem;
-  padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -193,6 +192,7 @@ a {
 }
 .intro .intro-title {
   height: 6rem;
+  padding-bottom: 2rem;
 }
 .intro .intro-caption-container {
   padding: 0 1rem;
