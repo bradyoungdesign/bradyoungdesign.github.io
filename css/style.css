@@ -82,6 +82,9 @@ nav {
   width: 60%;
   background-color: #E35353;
 }
+.nav-item .nav-link .nav-link-text {
+  font-size: 0.9rem;
+}
 
 .nav-logo-container {
   max-width: 3rem;
@@ -264,6 +267,9 @@ footer h6 {
   .scroll-top-side {
     right: 6.5rem;
   }
+  .nav-item .nav-link .nav-link-text {
+    font-size: 1.1rem;
+  }
   footer .msg-container h1 {
     color: #F9F9F9;
     font-size: 2rem;
@@ -319,6 +325,9 @@ footer h6 {
   }
   .nav-bar img {
     padding: 0;
+  }
+  .nav-bar .nav-item .nav-link .nav-link-text {
+    font-size: 1.3rem;
   }
   .intro {
     max-width: 80rem;

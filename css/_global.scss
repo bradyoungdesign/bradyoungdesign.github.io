@@ -96,6 +96,9 @@ nav{
         background-color: $red;
       }
     }
+    .nav-link-text{
+      font-size: 0.9rem;
+    }
   }
 
 }
@@ -287,6 +290,13 @@ footer{
   .scroll-top-side{
     right: 6.5rem;
   }
+  .nav-item{
+    .nav-link{
+      .nav-link-text{
+        font-size: 1.1rem;
+      }
+    }
+  }
   footer{
     .msg-container{
         h1{
@@ -352,6 +362,13 @@ footer{
     padding: 1rem 0;
     img{
       padding: 0;
+    }
+    .nav-item{
+      .nav-link{
+        .nav-link-text{
+          font-size: 1.3rem;
+        }
+      }
     }
   }
 
