@@ -330,7 +330,7 @@ footer{
         display: flex;
         flex-direction: column;
         // flex-wrap: wrap;
-        justify-content: start;
+        justify-content: flex-start;
         flex-basis: 60%;
     }
     .intro-title{
@@ -354,6 +354,9 @@ footer{
 
 
 @media only screen and (min-width: 1200px) {
+  .section{
+    min-height: fit-content;
+  }
   .section-wrap{
       padding: 5rem 10rem;
   }

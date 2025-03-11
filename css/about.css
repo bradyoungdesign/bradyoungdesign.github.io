@@ -297,7 +297,7 @@ footer h6 {
     padding: 0;
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
     flex-basis: 60%;
   }
   .intro .intro-title {
@@ -316,6 +316,10 @@ footer h6 {
   }
 }
 @media only screen and (min-width: 1200px) {
+  .section {
+    min-height: -moz-fit-content;
+    min-height: fit-content;
+  }
   .section-wrap {
     padding: 5rem 10rem;
   }
