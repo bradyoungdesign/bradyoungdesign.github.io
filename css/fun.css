@@ -30,11 +30,11 @@
   }
 }
 @media only screen and (min-width: 1200px) {
-  .grid {
-    padding-bottom: 3rem;
-  }
   .grid .grid-wrap {
     padding: 0;
+  }
+  .grid {
+    padding-bottom: 3rem;
   }
   .grid .grid-container {
     padding: 2rem 0;

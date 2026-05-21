@@ -1,15 +1,22 @@
-@import "_global.scss";
+@use "global" as g;
 
 // .wrap{
-//     background-color: $red;
+//     background-color: g.$red;
 // }
 h1,h2,h3,h4,h5,h6,p{
-    color: $navy;
+    color: g.$navy;
 }
 
 h4, h5{
-    font-family: $manrope;
+    font-family: g.$manrope;
     font-weight: 500;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    min-height: 100vh;
 }
 
 .about{
@@ -17,13 +24,13 @@ h4, h5{
     position: relative;
     min-height: 22rem;
     h1{
-        font-family: $phudu;
+        font-family: g.$phudu;
         text-transform: none;
         font-weight: 800;
         font-size: 2rem;
         // margin: 0;
         padding-bottom: 1rem;
-        border-bottom: thin solid $navy;
+        // border-bottom: thin solid g.$navy;
     }
     .dp-container{
         height: 20rem;
@@ -33,6 +40,7 @@ h4, h5{
             // height: 100%;
             width: 100%;
         }
+        border-radius: 0.5rem;
     }
     .about-caption-wrap{
         display: flex;
@@ -41,7 +49,7 @@ h4, h5{
             font-weight: 500;
             line-height: 150%;
             font-size: 1rem;
-            font-family: $manrope;
+            font-family: g.$manrope;
         }
         .about-caption{
             padding-bottom: 1rem;
@@ -58,16 +66,83 @@ h4, h5{
             padding-right: 1.5rem;
             &:hover{
             i, h5{
-                color: $red;
+                color: g.$red;
             }
             }
             i{
             transition: color ease 0.3s;
-            color: $navy;
+            color: g.$navy;
             opacity: 100%;
             font-size: 1.5rem;
             }
     }
+}
+
+.facts-section {
+    background: g.$light-secondary;
+    border-radius: 12px;
+    padding: 3rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 180px;
+    text-align: center;
+    width: 60vw;
+    margin: 0 auto 5rem auto;
+}
+.eyebrow {
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: g.$navy;
+    margin: 0 0 1.25rem;
+}
+.fact-text {
+    font-size: 2rem;
+    font-weight: 500;
+    color: g.$navy;
+    line-height: 1.25;
+    max-width: 520px;
+    min-height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease;
+}
+.next-btn {
+    background: #c0392b;
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-family: g.$ptsans;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    margin: 1rem;
+}
+.next-btn:hover {
+    background: #e74c3c;
+}
+.next-btn:active {
+    background: #a93226;
+    transform: scale(0.97);
+}
+.dot-indicators {
+    display: flex;
+    gap: 6px;
+    margin-top: 1.5rem;
+}
+.dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #444;
+    transition: background 0.3s;
+}
+.dot.active {
+    background: g.$red;
 }
 
 .cv{
@@ -94,7 +169,7 @@ h4, h5{
             padding-bottom: 1rem;
             h3{
                 font-size: 1.2rem;
-                // font-family: $syne;
+                // font-family: g.$syne;
                 opacity: 50%;
                 font-weight: 700;
             }
@@ -143,13 +218,14 @@ h4, h5{
     }
     .about{
         // padding: 6rem;
-        // min-height: 70vh;
+        min-height: 30rem;
+        padding-top: 5rem;
         h1{
             font-weight: 800;
             font-size: 2rem;
             margin: 0;
             padding-bottom: 1rem;
-            border-bottom: thin solid $navy;
+            // border-bottom: thin solid g.$navy;
         }
         .about-container{
             display: flex;
@@ -164,6 +240,7 @@ h4, h5{
             // border: thin solid red;
             flex-basis: 50%;
             padding-left: 4rem;
+            padding-top: 2rem;
             .about-caption-container{
                 padding-top: 2rem;
             }
@@ -172,6 +249,10 @@ h4, h5{
                 font-size: 1rem;
             }
         }
+    }
+
+    .facts-section{
+        max-width: 75rem;
     }
     .cv{
         .section-wrap{
@@ -219,6 +300,9 @@ h4, h5{
     .section-wrap{
         padding: 0;
     }
+    .wrap{
+        min-height: 75rem;
+    }
     .about{
         // border: thin solid red;
         max-width: 80rem;
@@ -226,6 +310,7 @@ h4, h5{
         padding-right: 2rem;
         padding-left: 2rem;
         padding-bottom: 5rem;
+        // min-height: 50rem;
         h1{
             font-size: 2.5rem;
         }
@@ -235,12 +320,17 @@ h4, h5{
             }
         }
         .dp-container{
-            height: 35rem;
+            height: 30rem;
             max-height: none;
             flex-basis: 40%;
         }
 
     }
+    .fact-text{
+        max-width: 48rem;
+        padding: 1rem 0;
+    }
+
     .cv{
         .section-wrap{
             padding: 0 2rem;

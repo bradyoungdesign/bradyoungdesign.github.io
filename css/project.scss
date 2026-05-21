@@ -1,4 +1,4 @@
-@import "_global.scss";
+@use "global" as g;
 
 .project{
     padding-top: 4rem;
@@ -16,9 +16,8 @@
     width: 100%;
     max-width: 60rem;
     h1{
-        // font-family: $manrope;
+        // font-family: g.$manrope;
         // text-transform: lowercase;
-        
         font-weight: 800;
         font-size: 2.8rem;
         padding: 0;
@@ -40,6 +39,7 @@
         width: 100%;
         img{
             width: 100%;
+            border-radius: 0.5rem;
         }
         video{
             width: 100%;
@@ -59,9 +59,9 @@
     padding: 2rem 0;
     margin: 3rem 0;
     justify-content: center;
-    border-top: thin solid $gray;
-    border-bottom: thin solid $gray;
     width: 100%;
+    border-radius: 0.5rem;
+    background-color: g.$light-secondary;
     .main-details-container{
         flex: 1 0 30%;
         display: flex;
@@ -71,12 +71,15 @@
         h4{
             padding-bottom: 1rem;
         }
+        p{
+            padding: 0;
+        }
     }
 }
 
 h4{
     padding: 1rem 0;
-    font-family: $ptsans;
+    font-family: g.$ptsans;
     font-weight: 600;
 }
 
@@ -84,7 +87,7 @@ p{
     padding: 0 0 1.5rem 0;
     font-weight: 500;
     font-size: 1rem;
-    font-family: $manrope;
+    font-family: g.$manrope;
 }
 
 .text-section{
@@ -98,6 +101,7 @@ p{
     img{
         width: 100%;
         margin-bottom: 2rem;
+        border-radius: 0.5rem;
     }
     // .sub-title{
     //     font-weight: 700;
@@ -116,7 +120,7 @@ p{
         }
     }
     .box{
-        background-color: $red;
+        background-color: g.$red;
         margin-top: 0.7rem;
         height: 0.5rem;
         width: 0.5rem;
@@ -133,7 +137,7 @@ p{
     h2{
         transition: color ease 0.3s;
         &:hover{
-            color: $red;
+            color: g.$red;
         }
     }
 }
@@ -146,7 +150,7 @@ p{
 }
 
 .img-caption{
-    color: $gray;
+    color: g.$gray;
 }
 
 .short-intro{
@@ -162,7 +166,7 @@ p{
 .side-menu-text{
     transition: color ease 0.2s;
     &:hover{
-        color: $navy;
+        color: g.$navy;
     }
 }
 
@@ -189,14 +193,14 @@ p{
         width: 5rem;
         .box{
             position: absolute;
-            border: 0.2rem solid $gray;
+            border: 0.2rem solid g.$gray;
             height: 4rem;
             width: 4rem;
             z-index: 8;
         }
         .small-box{
             position: absolute;
-            background-color: $red;
+            background-color: g.$red;
             height: 2rem;
             width: 2rem;
             z-index: 9;
@@ -216,10 +220,10 @@ p{
     .side-menu-container{
         position: fixed;
         display: block;
-        left: 50%;
+        left: 40%;
         transform: translateX(-41rem);
         top: 11rem;
-        // background-color: $light1;
+        // background-color: g.$light1;
         // border: thin solid red;
         .back-btn{
             margin-bottom: 4rem;
@@ -240,35 +244,39 @@ p{
         h3{
             padding-bottom: 0.5rem;
             line-height: 150%;
-            color: $gray;
+            color: g.$gray;
             font-size: 1rem;
         }
         .active{
-            color: $navy;
+            color: g.$navy;
         }
         .side-menu-text{
           transition: color ease 0.3s;
           &:hover{
-            color: $navy;
+            color: g.$navy;
           }
         }
       }
-    // .project-title{
-    //     width: 100%;
-    //     padding-left: 20rem;
-    //     max-width: 80rem;
-    //     // text-align: right;
-    //     h1{
-    //         font-size: 4.5rem;
-    //         width: 100%;
-    //         margin-top: 0;
-    //     }
-    // }
+    .project-title{
+        width: 100%;
+        max-width: 75rem;
+        h1{
+            font-size: 4.5rem;
+            width: 100%;
+            margin-top: 0;
+        }
+    }
+    .content-wrap{
+        width: 100%;
+        max-width: 75rem;
+    }
     .main-content{
+        max-width: none;
+        width: 100%;
+        margin: 0 auto;
         .main-img{
             display: flex;
             justify-content: center;
-            // border: thin solid red;
         }
     }
 

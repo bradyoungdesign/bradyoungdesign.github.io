@@ -1,0 +1,85 @@
+.intro {
+  max-width: 80rem;
+  display: flex;
+  justify-content: center;
+}
+.intro .intro-title {
+  margin: 0;
+  padding: 0;
+}
+.intro .intro-caption-container {
+  margin: 0 auto;
+}
+.intro h4 {
+  max-width: 80vw;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 150%;
+}
+
+.grid {
+  padding-bottom: 3rem;
+}
+.grid .grid-container {
+  margin: 2rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.grid .grid-container .grid-item {
+  border-radius: 2px;
+}
+.grid .grid-container .grid-item img, .grid .grid-container .grid-item video {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+@media only screen and (min-width: 786px) {
+  .intro {
+    align-items: flex-start;
+  }
+  .grid .section-container {
+    margin: 0 auto;
+    max-width: 80rem;
+  }
+  .grid .grid-wrap {
+    padding: 0 2rem;
+  }
+  .grid .grid-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .grid .grid-container .grid-item {
+    flex-basis: 50%;
+    width: 100%;
+    padding: 0;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .grid .grid-wrap {
+    padding: 0;
+  }
+  .grid {
+    padding-bottom: 3rem;
+  }
+  .grid .section-container {
+    margin: 0 auto;
+    max-width: 85rem;
+  }
+  .grid .grid-container {
+    flex-wrap: wrap;
+  }
+  .grid .grid-container .grid-item {
+    padding: 0;
+    flex-basis: 33.33%;
+  }
+  .grid .grid-container .grid-item img, .grid .grid-container .grid-item video {
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 100%;
+  }
+  .grid .grid-container .last-grid-item {
+    display: block;
+  }
+}

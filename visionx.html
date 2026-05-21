@@ -22,7 +22,6 @@
     <!-- Stylesheet -->
     <link rel="stylesheet" href="css/project.css">
 </head>
-<!-- <body onload="cb.init.init();"> -->
 <body>
     <div class="wrap">
         <nav class="nav" id="nav">
@@ -30,24 +29,52 @@
                 <div class="nav-logo">
                     <a href="/">
                         <div class="nav-logo-container">
-                            <img src="/images/by_logo_rounded_navyRed.svg" alt="logo" class="logo-light">
+                        <img src="/images/by_logo_rounded_navyRed.svg" alt="logo" class="logo-light">
                         </div>
                     </a>
                 </div>
+
+                <!-- Desktop links-->
                 <ul class="nav-list">
-                    <li class="nav-item"  id="scroll-btn">
-                        <a class="nav-link">
-                            <h3 class="nav-link-text">Projects</h3>
-                        </a>
+                    <li class="nav-item" id="scroll-btn">
+                        <a class="nav-link" href="/index.html#projects"><h3 class="nav-link-text">Projects</h3></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/about.html">
-                            <h3 class="nav-link-text">About</h3>
-                        </a>
+                        <a class="nav-link" href="/about.html"><h3 class="nav-link-text">About</h3></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/otherwork.html">
-                            <h3 class="nav-link-text">Other work</h3>
+                        <a class="nav-link" href="/otherwork.html"><h3 class="nav-link-text">Other work</h3></a>
+                    </li>
+                    <li class="cta">
+                        <a href="mailto:bradyoungdesign@gmail.com" class="pill-button">
+                        <h3 class="nav-link-text">Contact</h3>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Hamburger-->
+                <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+            <!-- Mobile dropdown -->
+            <div class="mobile-menu" id="mobile-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a class="mobile-nav-link" href="/index.html"><h3 class="nav-link-text">Home</h3></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="mobile-nav-link" href="/about.html"><h3 class="nav-link-text">About</h3></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="mobile-nav-link" href="/otherwork.html"><h3 class="nav-link-text">Other work</h3></a>
+                    </li>
+                    <li class="cta">
+                        <a href="mailto:bradyoungdesign@gmail.com" class="pill-button-inverted">
+                        <h3 class="mobile-nav-link-text">Contact</h3>
                         </a>
                     </li>
                 </ul>
@@ -57,7 +84,7 @@
         <div class="section project">
             <div class="project-wrap section-wrap">
                 <div class="side-menu-container">
-                    <button class="back-btn"><a href="/">
+                    <button class="back-btn"><a href="/index.html#projects">
                         <h2>&#8592;</h2>
                     </a></button>
                 </div>
@@ -73,15 +100,15 @@
                         <div class="text-wrap">
                             <div class="main-details">
                                 <div class="main-details-container">
-                                    <h4>Timeline</h4>
-                                    <p>3 weeks</p>
+                                    <h4>Date</h4>
+                                    <p>2024</p>
                                 </div>
                                 <div class="main-details-container">
                                     <h4>Platform</h4>
                                     <p>Wordpress Website</p>
                                 </div>
                                 <div class="main-details-container">
-                                    <h4>My Role</h4>
+                                    <h4>Services</h4>
                                     <p>UI/UX Designer</p>
                                     <p>Front End Developer</p>
                                 </div>
@@ -156,9 +183,7 @@
 
         <footer class="footer">
             <div class="footer-container">
-                <div class="footer-logo-container">
-                    <img src="/images/by_logo_rounded_whiteRed.svg" alt="logo" class="logo-light">
-                </div>
+
                 <div class="msg-container">
                     <h1>Thanks for visiting my portfolio!</h1>
                 </div>
@@ -173,15 +198,27 @@
                     </div>
                     <h5>Made with &lt;&gt; by me</h5>
                 </div>
-                <!-- <h6>© BradYoungDesign 2024</h6> -->
+                <!-- <h6>© BradYoungDesign 202-</h6> -->
             </div>
         </footer>
     </div>
 
-    <script src="js/project.js"></script>
-    <script src="js/global.js"></script>
-    <script src="js/medium-zoom.js"></script>
-    <script src="js/img-zoom.js"></script>
+    <!-- Lenis -->
+    <script src="https://unpkg.com/lenis@1.3.23/dist/lenis.min.js"></script> 
+
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollSmoother.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollToPlugin.min.js"></script>
+    
+    <script src="js/smooth-scroll.js"></script>
+
+    <script src="../js/cb.js"></script>
+    <script src="../js/project.js"></script>
+    <script src="../js/global.js"></script>
+    <script src="../js/medium-zoom.js"></script>
+    <script src="../js/img-zoom.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
 </body>
 </html>

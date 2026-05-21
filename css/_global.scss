@@ -4,16 +4,26 @@
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Phudu:wght@300..900&display=swap');
 
+@import url('satoshi.css');
+
 $manrope: 'Manrope', sans-serif;
 $phudu: 'Phudu', sans-serif;
 $ptsans: 'PT Sans', sans-serif;
+$satoshi: 'Satoshi', sans-serif;
+$satoshi-var: 'Satoshi-Variable', sans-serif;
 
 $navy:#151F35;
-// $dark-navy:#060828;
+$dark-navy:#060828;
 $light1:#F9F9F9;
+$light-secondary: #F1F3ED;
+$vibrant_red:#CE3615;
 $red:#E35353;
 $gray: #CDCDCD;
 $off-white: #FEFFFB;
+
+*, html{
+  scroll-behavior: smooth !important;
+}
 
 * {
 	vertical-align: baseline;
@@ -41,8 +51,8 @@ body{
   height: 100%;
 }
 
-nav{
-  border-bottom: 0.15rem solid $navy;
+.nav{
+  position: relative;
 }
 
 .nav-bar{
@@ -51,14 +61,9 @@ nav{
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.nav-list{
-  display: flex;
-  flex-grow: 1;
-  justify-content: flex-end;
-  align-items: center;
-  height: 100%;
+  position: relative;
+  z-index: 9999;
+  background-color: $off-white;
 }
 
 .nav-item{
@@ -89,6 +94,7 @@ nav{
       background-color: transparent;
       transition: width ease 0.4s;
       z-index:-1;
+      border-radius: 1rem;
     }
     &:hover{
       ::after{
@@ -100,7 +106,14 @@ nav{
       font-size: 0.9rem;
     }
   }
+  .mobile-nav-link{
+    position: relative;
+    width: 100%;
+  }
+}
 
+.cta{
+  padding-left: 1rem;
 }
 
 .nav-logo-container{
@@ -112,8 +125,181 @@ nav{
   img{
       height: 2rem;
       width: 100%;
+      transition: all ease-in-out 0.1s;
+      padding-left: 1px;
+      &:hover{
+        padding-left: 0.2rem;
+      }
   }
 }
+
+.pill-button {
+  display: inline-block;
+  padding: 1rem 2.125rem; 
+  border-radius: 3.125rem; 
+  border: 0.125rem solid $red;
+  
+  color: $red;
+  text-decoration: none;
+  
+  background-image: linear-gradient(to right, $red 50%, transparent 50%);
+  background-size: 300% 20%;
+  background-position: right bottom;
+  
+  transition: background-position 0.4s ease-in-out, color 0.3s ease;
+  cursor: pointer;
+  h3{
+    transition: background-position 0.4s ease-in-out, color 0.3s ease;
+    color: $navy;
+  }
+}
+.pill-button-inverted {
+  display: inline-block;
+  padding: 1rem 2.125rem; 
+  border-radius: 3.125rem; 
+  border: 0.125rem solid $red;
+  
+  color: $red;
+  text-decoration: none;
+  
+  background-image: linear-gradient(to right, $red 50%, transparent 50%);
+  background-size: 250% 150%;
+  background-position: right bottom;
+  
+  transition: background-position 0.4s ease-in-out, color 0.3s ease;
+  cursor: pointer;
+  h3{
+    transition: background-position 0.4s ease-in-out, color 0.3s ease;
+  }
+}
+
+  /* Hover State */
+.pill-button:hover {
+  background-position: left bottom;
+  h3{
+  color: #ffffff;
+  }
+}
+
+.pill-button:active {
+  opacity: 0.9;
+}
+
+.hamburger {
+  // height: 20rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3125rem;
+  cursor: pointer;
+  padding: 1rem;
+  // border: thin solid red;
+  border-radius: 0.5rem;
+  background-color: $red;
+}
+
+.hamburger span {
+  display: block;
+  width: 1.5rem;
+  height: 0.2rem;
+  background: $off-white;
+  border-radius: 0.5rem;
+  transition: transform 0.25s, opacity 0.25s;
+}
+
+
+.hamburger.is-open span:nth-child(1) { transform: translateY(0.5rem) rotate(45deg); }
+.hamburger.is-open span:nth-child(2) { opacity: 0; }
+.hamburger.is-open span:nth-child(3) { transform: translateY(-0.5rem) rotate(-45deg); }
+
+/* --- Desktop links --- */
+/* Hidden by default (mobile) */
+.nav-bar{
+  .nav-list{
+      display: none;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    // opacity: 0;
+    transform: translateY(-100rem);
+  }
+  to {
+    // opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideUp {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-100rem);
+  }
+}
+
+/* --- Mobile dropdown --- */
+.mobile-menu.is-open {
+  display: block;
+  position: absolute;
+  top: 5rem;
+  // top:120vh;
+  border-top: 0.5px solid rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1rem 1rem;
+  border: thin solid red;
+  background-color: $red;
+  z-index: 100;
+  width: 100%;
+  height: 120vh;
+  margin: 0;
+  border-radius: 0 0 50rem 50rem;
+  // top:120vh;
+  // transition: top 1s ease-in-out;
+  animation: slideDown 0.6s ease-in-out forwards;
+  // transform: translateY(1rem);
+  transition: transform 1s ease; /* Smooth transition */
+  .nav-list{
+    flex-direction: column;
+    align-items: flex-start;
+    // gap: 0.25rem;
+    // background-color: $off-white;
+    // padding: 2rem;
+    // border: thin solid black;
+    padding: 2rem 0;
+    margin: 0;
+    width: 50%;
+    .nav-item{
+      width: 100%;
+      h3{
+        color: $off-white;
+        font-size: 2rem;
+      }
+    }
+    .cta{
+      padding: 1rem;
+      h3{
+        color: $red;
+        font-size: 2rem;
+      }
+      a{
+        background-color: $off-white;
+        padding: 1rem 2rem;
+      }
+    }
+  }
+}
+
+.mobile-menu{
+  display: none;
+  // visibility: none;
+  position: absolute;
+  top: 0rem;
+  transition: transform 1s ease; /* Smooth transition */
+  animation: slideUp 0.6s ease-in-out forwards;
+}
+
 
 .hide{
   display: none;
@@ -123,6 +309,14 @@ nav{
 
 .active{
   color: $navy !important;
+}
+
+.no-scroll {
+  overflow: hidden;
+  touch-action: none;
+  // overflow: hidden;
+  position: fixed;
+  width: 100%;
 }
 
 .section{
@@ -243,6 +437,7 @@ footer{
   flex-direction: column;
   justify-content: left;
   align-items: left;
+  z-index: 2;
     .msg-container{
       padding: 2rem 0;
       background-color: $navy;
@@ -284,6 +479,13 @@ footer{
 }
 
 @media only screen and (min-width: 786px) {
+  .nav-list{
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+  }
   .section-wrap{
     padding: 4rem;
   }
@@ -297,6 +499,21 @@ footer{
       }
     }
   }
+
+  .hamburger {
+    display: none;
+  }
+
+  .nav-bar .nav-list {
+    display: flex;
+  }
+
+  .mobile-menu,
+  .mobile-menu.is-open {
+    display: none;
+  }
+
+
   footer{
     .msg-container{
         h1{
@@ -361,8 +578,8 @@ footer{
       padding: 5rem 10rem;
   }
   .nav-bar{
-    max-width: 82rem;
-    padding: 1rem 0;
+    max-width: 130rem;
+    padding: 1rem;
     img{
       padding: 0;
     }
@@ -375,9 +592,9 @@ footer{
     }
   }
 
-  .intro{
-      max-width: 80rem;
-  }
+  // .intro{
+  //     max-width: 80rem;
+  // }
   .intro{
       padding:5rem;
       .intro-title-container{
@@ -403,6 +620,6 @@ footer{
   .footer-container{
     margin: auto;
     width: 100%;
-    max-width: 80rem;
+    max-width: 130rem;
   }
 }
