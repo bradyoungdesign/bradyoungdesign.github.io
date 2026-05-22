@@ -2,19 +2,25 @@
   max-width: 80rem;
   display: flex;
   justify-content: center;
+  min-height: 15rem;
 }
 .intro .intro-title {
   margin: 0;
   padding: 0;
+  text-align: center;
 }
 .intro .intro-caption-container {
   margin: 0 auto;
+}
+.intro h1 {
+  text-align: center;
 }
 .intro h4 {
   max-width: 80vw;
   font-size: 1rem;
   font-weight: 500;
   line-height: 150%;
+  text-align: center;
 }
 
 .grid {
@@ -37,7 +43,15 @@
 
 @media only screen and (min-width: 786px) {
   .intro {
+    padding-top: 6rem;
+    min-height: 0;
     align-items: flex-start;
+  }
+  .intro .intro-title {
+    text-align: start;
+  }
+  .intro h1, .intro h4 {
+    text-align: start;
   }
   .grid .section-container {
     margin: 0 auto;
