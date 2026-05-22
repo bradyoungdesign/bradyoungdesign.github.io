@@ -235,7 +235,7 @@ body {
   align-items: flex-start;
   padding: 2rem 0;
   margin: 0;
-  width: 50%;
+  width: 80%;
 }
 .mobile-menu.is-open .nav-list .nav-item {
   width: 100%;
@@ -647,7 +647,7 @@ body {
 }
 
 .fact-text {
-  font-size: 2rem;
+  font-size: 1.2rem;
   font-weight: 500;
   color: #151F35;
   line-height: 1.25;
@@ -793,6 +793,9 @@ body {
   }
   .facts-section {
     max-width: 75rem;
+  }
+  .fact-text {
+    font-size: 1.5rem;
   }
   .cv .section-wrap {
     padding: 0 6rem;

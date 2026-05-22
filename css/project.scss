@@ -47,6 +47,11 @@
     }
 }
 
+video{
+    max-width: 75rem;
+    width: 100%;
+}
+
 .text-wrap{
     display: flex;
     flex-direction: column;
@@ -62,12 +67,14 @@
     width: 100%;
     border-radius: 0.5rem;
     background-color: g.$light-secondary;
+    flex-direction: column;
     .main-details-container{
         flex: 1 0 30%;
         display: flex;
         flex-direction: column;
         text-align: center;
         align-items: center;
+        padding-bottom: 1rem;
         h4{
             padding-bottom: 1rem;
         }
@@ -90,6 +97,11 @@ p{
     font-family: g.$manrope;
 }
 
+p{
+    span{
+        font-weight: bold;
+    }
+}
 .text-section{
     padding-bottom: 2rem;
     width: 100%;
@@ -213,6 +225,9 @@ p{
             z-index: 10;
             font-size: 2rem;
         }
+    }
+    .main-details{
+        flex-direction: row;
     }
 
 }

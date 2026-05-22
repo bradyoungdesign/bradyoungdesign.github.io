@@ -99,7 +99,7 @@ body{
     margin: 0 0 1.25rem;
 }
 .fact-text {
-    font-size: 2rem;
+    font-size: 1.2rem;
     font-weight: 500;
     color: g.$navy;
     line-height: 1.25;
@@ -253,6 +253,9 @@ body{
 
     .facts-section{
         max-width: 75rem;
+    }
+    .fact-text{
+        font-size: 1.5rem;
     }
     .cv{
         .section-wrap{
