@@ -437,6 +437,9 @@ footer h6 {
 }
 
 @media only screen and (min-width: 786px) {
+  .nav-bar {
+    padding: 1rem 2rem;
+  }
   .nav-list {
     display: flex;
     flex-grow: 1;
@@ -518,7 +521,6 @@ footer h6 {
   }
   .nav-bar {
     max-width: 130rem;
-    padding: 1rem;
   }
   .nav-bar img {
     padding: 0;
