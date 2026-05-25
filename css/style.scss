@@ -37,68 +37,159 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    min-height: 20rem;
+    min-height: 16rem;
     // overflow-x: hidden;
     justify-content: center;
     padding: 2rem 0;
     margin: auto;
-    .home-title-container{
-        padding: 0 1rem 0 1rem;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        // width: 80%;
-    }
-    .home-title{
-        min-height: 6rem;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        padding: 0 0 0 1rem;
-        .title-container{
-            display: flex;
-            align-items: center;
-            svg{
-                // height: rem;
-                width: clamp(2rem, 3vw, 4rem);
-                padding: 0.5rem;
-                overflow: visible;
-            }
-        }
-        h2, h3{
-            padding-left: 0;
-        }
-    }
-    h1{
-        display: inline;
-        font-size: clamp(3rem, 8vw, 8rem);
-        font-family: g.$phudu;
-        font-weight: 700;
-        line-height: 60%;
-        // font-size: clamp(2rem, 6vw, 6rem);
-        // padding-right: 1rem;
-        margin: 1rem 0;
-    }
-    h2{
-        font-size: clamp(1rem, 7vw, 2.5rem);
-        font-family: g.$satoshi-var;
-        font-weight: 500;
-        text-transform: uppercase;
-        background: linear-gradient(180deg, #E35353 0%, #CE3615 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        color: transparent;
-    }
-    h3{
-        font-size: clamp(1rem, 6vw, 1.5rem);
-        font-family: g.$satoshi-var;
-        font-weight: 500;
-        text-transform: uppercase;
-        padding: 0.6rem 0;
-        max-width: 35rem;
-    }
+    // .home-title-container{
+    //     border: thin solid black;
+    //     padding: 0 1rem;
+    //     display: flex;
+    //     flex-wrap: wrap;
+    //     justify-content: center;
+    //     width: 100%;
+    //     flex-direction: column;
+    //     gap: 0.4em; /* Proportional spacing between sections */
+        
+    //     /* BREAKPOINT 1: Mobile (Base size) */
+    //     font-size: 14px;
+    // }
+    // .home-title{
+    //     display: flex;
+    //     align-items: center;
+    //     gap: 0.5em;
+    //     .title-container{
+    //         display: flex;
+    //         align-items: center;
+    //         justify-content: flex-start;
+    //         svg{
+    //             // height: rem;
+    //             width: clamp(2rem, 3vw, 4rem);
+    //             padding: 0.5rem;
+    //             overflow: visible;
+    //         }
+    //     }
+    //     h1{
+    //     display: inline;
+    //     font-size: clamp(2.5rem, 10vw, 8rem);
+    //     font-family: g.$phudu;
+    //     font-weight: 700;
+    //     line-height: 60%;
+    //     // font-size: clamp(2rem, 6vw, 6rem);
+    //     // padding-right: 1rem;
+    //     margin: 1rem 0;
+    //     }
+    //     h2{
+    //         display: flex;
+    //         font-size: clamp(1.8rem, 7vw, 2.5rem);
+    //         font-family: g.$satoshi-var;
+    //         font-weight: 500;
+    //         text-transform: uppercase;
+    //         background: linear-gradient(180deg, #E35353 0%, #CE3615 100%);
+    //         -webkit-background-clip: text;
+    //         -webkit-text-fill-color: transparent;
+    //         background-clip: text;
+    //         color: transparent;
+    //         padding-left: clamp(0rem, 1vw, 3rem);
+    //         // border: thin solid black;
+    //     }
+    //     h3{
+    //         // display: flex;
+    //         // flex-direction: column;
+    //         // width: 80%;
+    //         font-size: clamp(1.3rem, 6vw, 1.5rem);
+    //         font-family: g.$satoshi-var;
+    //         font-weight: 500;
+    //         text-transform: uppercase;
+    //         padding: 0.6rem 0;
+    //         max-width: 20rem;
+    //         padding-left: clamp(0rem, 1vw, 3rem);
+    //     }
+    // }
+
+    // ========================================
+
+/* 1. THE PARENT CONTAINER (Controls the scale) */
+.brand-lockup {
+//   border: thin solid black;
+  font-family: g.$phudu; /* Replace with your actual font */
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em; /* Proportional spacing between sections */
+  
+  /* BREAKPOINT 1: Mobile (Base size) */
+  font-size: 14px; 
+//   border: thin solid black;
+}
+
+/* 2. THE CHILD ELEMENTS (Sized in em to preserve proportions) */
+.title-line {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  letter-spacing: -0.05em;
+}
+
+.name {
+  font-size: 3.8em; /* Scaled relative to parent base */
+  font-weight: 900;
+//   color: var(--color-dark);
+  margin: 0;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  color: g.$navy;
+  font-family: g.$phudu;
+  font-weight: 700;
+}
+
+.star-icon {
+  width: 3.5em; /* Scales perfectly with the text */
+  height: auto;
+//   color: var(--color-dark);
+}
+
+.title {
+  font-size: 2.6em;
+  font-weight: 700;
+//   color: var(--color-accent);
+  margin: 0;
+  line-height: 1.0;
+//   letter-spacing: -0.01em;
+  padding-left: 1em;
+font-family: g.$satoshi-var;
+font-weight: 500;
+text-transform: uppercase;
+background: linear-gradient(180deg, #E35353 0%, #CE3615 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+color: transparent;
+letter-spacing: -0.05em;
+}
+
+.subtitle {
+  font-size: 1.2em;
+  font-weight: 600;
+//   color: var(--color-dark);
+  margin: 0;
+  line-height: 1.2;
+//   letter-spacing: 0.02em;
+//   letter-spacing: -0.01em;
+ padding-left: 2.2em;
+ font-family: g.$satoshi-var;
+font-weight: 500;
+text-transform: uppercase;
+letter-spacing: -0.03em;
+}
+
+// .brand-lockup {
+//   /* clamp(minimum_size, fluid_preferred_size, maximum_size) */
+//   font-size: clamp(14px, 1.8vw, 26px); 
+// }
+
+    // ========================================
 
     .subtitle-container{
         width: 100%;
@@ -198,13 +289,17 @@
         margin: 1rem;
         border-radius: 0.5rem;
         overflow: hidden;
+        // width: 90%;
+        max-width: 400px;
         .project-grid-item{
             flex: 0 0 100%;
             display: flex;
             flex-direction: column;
-            height: 20rem;
+            min-height: 18rem;
             overflow-y: hidden;
             border-radius: 1px;
+            padding-bottom: 2rem;
+            width: 100%;
             a{
                 height: 100%;
             }
@@ -215,12 +310,12 @@
                 display: flex;
                 padding: 2rem;
                 h3{
-                    font-size: clamp(2rem, 6vw, 6rem);
+                    font-size: clamp(1.5rem, 6vw, 2rem);
                     color: g.$light1;
                     padding-bottom: 0.5rem;
                 }
                 h4{
-                    font-size: 1.3rem;
+                    font-size: 1rem;
                     color: g.$light1;
                 }
                 .project-num{
@@ -303,16 +398,22 @@
             background-color: #CF3D52;
         }
     }
+    .portfolio-content-container{
+        display: flex;
+        justify-content: center;
+    }
 }
 
 .archive{
     // background-color: #060828;
     // padding-bottom: 3rem;
+    margin: auto;
+    max-width: 400px;
     .archive-container{
         margin: 1rem;
         border-radius: 0.5rem;
         .archive-item{
-            height: 30rem;
+            height: fit-content ;
             // padding: 0 2rem;
             img, video{
                 object-fit: cover;
@@ -338,39 +439,60 @@
 
 
 
-@media only screen and (min-width: 786px) {   
+@media only screen and (min-width: 768px) {   
     .section{
-        min-height: 50rem;
+        min-height: 0;
     }
-
     .home{
-        min-height: 20rem;
-        padding: 5rem 0;
+        padding:0;
+        min-height: 28rem;
+        justify-content: center;
+        .home-title-container{
+            padding: 0;
+        }
         .home-title{
+            height: fit-content;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            padding: 0;
+            width: 100%;
+            max-width: 40rem;
+            .title-container{
+                justify-content: flex-start;
+                width: 100%;
+                svg{
+                    width: 4rem;
+                }
+            }
             h1{
-                // font-size: clamp(5rem, 7vw, 12rem);
-                padding: 0.5rem 0;
+                font-size: 5rem;
+                font-size: clamp(5rem, 8vw, 10rem);
+                padding: 0;
+                
             }
             h2{
-                // line-height: 90%;
-                // font-size: clamp(4rem, 4vw, 8rem);
-                // padding-left: 10rem;
-                padding: 0.2rem 0;
+                align-self: flex-end;
+                line-height: 90%;
+                font-size: 3rem;
+                padding: 0.5rem 0;
+                width: 100%;
+                padding-left: clamp(1vw, 5vw, 3rem);
             }
             h3{
-                font-size: clamp(1rem, 4vw, 2rem);
-                // padding: 1rem 0;
-                max-width: 45rem;
-            }
-            .title-container{
-                h1{
-                    margin-right: 1rem;
-                }
-                svg{
-                width: 4rem;
-                }
+                display: flex;
+                flex-direction: column;
+                padding: 0;
+                line-height: 100%;
+                font-size: 2rem;
+                padding-left: clamp(1vw, 5vw, 3rem);
+                width: 100%;
+                max-width: none;
             }
         }
+        .brand-lockup {
+            font-size: 26px; /* Everything scales up cleanly by altering this one value */
+        } 
     }
     .section-title-container{
         padding: 1rem 2rem;
@@ -392,10 +514,12 @@
             flex-wrap: wrap;
             justify-content: center;
             padding: 0;
-            // max-width: 80rem;
+            width: 100%;
+            max-width: 45rem;
             .project-grid-item{
                 flex: 0 0 50%;
-                max-width: 35rem;
+                max-width: none;
+                min-height: none;
                 // margin-bottom: 4rem;
                 .project-title-wrap{
                     display: flex;
@@ -403,7 +527,7 @@
                         font-size: 2rem;
                     }
                     h4{
-                        font-size: 1.6rem;
+                        font-size: 1rem;
                         transition: transform ease 0.2s;
                         display: flex;
                     }
@@ -412,76 +536,37 @@
         }
     }
     .archive{
+        max-width: 50rem;
         .archive-wrap{
             padding: 0 2rem;
         }
         .archive-container{
             display: flex;
             .archive-item{
-                width: 33.33%;
+                height: 30rem;
+                width: 50%;
                 padding: 0;
             }
         }
-        // .last-archive-item{
-        //     display: none;
-        // }
+        .last-archive-item{
+            display: none;
+        }
     }
   }
-@media only screen and (min-width: 1600px) {
-    // .home{
-    //     // max-width: 80rem;
-    // }
+@media only screen and (min-width: 1200px) {
     .scroll-svg{
         display: revert;
     }
-    // .home *{
-    //     border: thin solid red;
-    // }
     .home{
-        padding:5rem 5rem 0 5rem;
-        height: clamp(35rem, 30vw, 50rem);
+        height: clamp(35rem, 48vw, 40rem);
         justify-content: center;
-        .home-title-container{
-            flex-basis: 65%;
-            padding: 0;
-        }
-        .home-title{
-            height: fit-content;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            padding: 0 10rem 0 13rem;
-            // justify-content: center;
-            h1{
-                font-size: clamp(5rem, 7vw, 12rem);
-                // line-height: 120%;
-                // padding: 2rem 2rem 2rem 0;
-                padding: 1.5rem 1rem 1.5rem 0;
-            }
-            h2{
-                align-self: flex-end;
-                line-height: 90%;
-                font-size: clamp(4rem, 5vw, 7rem);
-                padding: 0 0 0 7rem;
-            }
-            h3{
-                padding: 1rem 0;
-                width: 100rem;
-                line-height: 100%;
-                font-size: clamp(2rem, 4vw, 3.5rem);
-                padding-left: 7rem;
-                max-width: 70rem;
-            }
-            .title-container{
-                svg{
-                    width: 8rem;
-                }
-            }
-        }
+        .brand-lockup {
+            padding-top: 4rem;
+            font-size: clamp(14px, 10vw, 40px);
+        } 
     }
     .section-container{
         margin: auto;
-        // flex-direction: column;
         justify-content: center;
         width: 100%;
         max-width: 80rem;
@@ -502,6 +587,7 @@
             flex-wrap: wrap;
             justify-content: center;
             padding: 0;
+            max-width: none;
             .project-grid-item{
                 flex: 0 0 50%;
                 // margin-bottom: 4rem;
@@ -524,13 +610,12 @@
 
     .archive{
         margin-bottom: 6rem;
+        max-width: none;
         .archive-wrap{
             padding: 0;
         }
-        // background-color: #060828;
         padding-bottom: 3rem;
         .archive-container{
-            // border: thin solid black;
             border-radius: 0.5rem;
             overflow: hidden;
             margin-bottom: 2rem;
@@ -539,7 +624,6 @@
                 width: 33.333%;
                 border-radius: 2px;
                 img, video{
-                    // object-fit: fill;
                     height: 100%;
                     width: 100%;
                 }
