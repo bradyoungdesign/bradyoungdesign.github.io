@@ -38,76 +38,12 @@
     flex-wrap: wrap;
     align-items: center;
     min-height: 16rem;
-    // overflow-x: hidden;
     justify-content: center;
     padding: 2rem 0;
     margin: auto;
-    // .home-title-container{
-    //     border: thin solid black;
-    //     padding: 0 1rem;
-    //     display: flex;
-    //     flex-wrap: wrap;
-    //     justify-content: center;
-    //     width: 100%;
-    //     flex-direction: column;
-    //     gap: 0.4em; /* Proportional spacing between sections */
-        
-    //     /* BREAKPOINT 1: Mobile (Base size) */
-    //     font-size: 14px;
-    // }
-    // .home-title{
-    //     display: flex;
-    //     align-items: center;
-    //     gap: 0.5em;
-    //     .title-container{
-    //         display: flex;
-    //         align-items: center;
-    //         justify-content: flex-start;
-    //         svg{
-    //             // height: rem;
-    //             width: clamp(2rem, 3vw, 4rem);
-    //             padding: 0.5rem;
-    //             overflow: visible;
-    //         }
-    //     }
-    //     h1{
-    //     display: inline;
-    //     font-size: clamp(2.5rem, 10vw, 8rem);
-    //     font-family: g.$phudu;
-    //     font-weight: 700;
-    //     line-height: 60%;
-    //     // font-size: clamp(2rem, 6vw, 6rem);
-    //     // padding-right: 1rem;
-    //     margin: 1rem 0;
-    //     }
-    //     h2{
-    //         display: flex;
-    //         font-size: clamp(1.8rem, 7vw, 2.5rem);
-    //         font-family: g.$satoshi-var;
-    //         font-weight: 500;
-    //         text-transform: uppercase;
-    //         background: linear-gradient(180deg, #E35353 0%, #CE3615 100%);
-    //         -webkit-background-clip: text;
-    //         -webkit-text-fill-color: transparent;
-    //         background-clip: text;
-    //         color: transparent;
-    //         padding-left: clamp(0rem, 1vw, 3rem);
-    //         // border: thin solid black;
-    //     }
-    //     h3{
-    //         // display: flex;
-    //         // flex-direction: column;
-    //         // width: 80%;
-    //         font-size: clamp(1.3rem, 6vw, 1.5rem);
-    //         font-family: g.$satoshi-var;
-    //         font-weight: 500;
-    //         text-transform: uppercase;
-    //         padding: 0.6rem 0;
-    //         max-width: 20rem;
-    //         padding-left: clamp(0rem, 1vw, 3rem);
-    //     }
-    // }
-
+    svg{
+        overflow: visible
+    }
     // ========================================
 
 /* 1. THE PARENT CONTAINER (Controls the scale) */
@@ -135,7 +71,6 @@
 .name {
   font-size: 3.8em; /* Scaled relative to parent base */
   font-weight: 900;
-//   color: var(--color-dark);
   margin: 0;
   line-height: 0.9;
   letter-spacing: -0.02em;
@@ -147,16 +82,13 @@
 .star-icon {
   width: 3.5em; /* Scales perfectly with the text */
   height: auto;
-//   color: var(--color-dark);
 }
 
 .title {
   font-size: 2.6em;
   font-weight: 700;
-//   color: var(--color-accent);
   margin: 0;
   line-height: 1.0;
-//   letter-spacing: -0.01em;
   padding-left: 1em;
 font-family: g.$satoshi-var;
 font-weight: 500;
@@ -172,11 +104,8 @@ letter-spacing: -0.05em;
 .subtitle {
   font-size: 1.2em;
   font-weight: 600;
-//   color: var(--color-dark);
   margin: 0;
   line-height: 1.2;
-//   letter-spacing: 0.02em;
-//   letter-spacing: -0.01em;
  padding-left: 2.2em;
  font-family: g.$satoshi-var;
 font-weight: 500;
@@ -236,32 +165,47 @@ letter-spacing: -0.03em;
         transform: rotate(-180deg);
     }
 
-    // @keyframes spin-right {
-    // 0% {
-    //     // transform-origin: 50% 50%;
-    // }
-    // 100% {
-    //     transition: transform 1s cubic-bezier(0.34, 1.56, 0.64, 1);
-    //     transform: rotate(180deg);
-    // }
-    // }
-    // @keyframes spin-left {
-    // 0% {
-    //     // transform-origin: 50% 50%;
-    // }
-    // 100% {
-    //     transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-    //     transform: rotate(-180deg);
-    // }
-    // }
+    /* 1. Define the Keyframes cleanly */
+    @keyframes spin-right {
+        0% {
+            transform-origin: 50% 50%;
+            transform: rotate(0deg);
+        }
+        100% {
+            transform-origin: 50% 50%;
+            transform: rotate(180deg);
+        }
+    }
+
+    @keyframes spin-left {
+        0% {
+            transform-origin: 50% 50%;
+            transform: rotate(0deg);
+        }
+        100% {
+            transform-origin: 50% 50%;
+            transform: rotate(-180deg);
+        }
+    }
+
+    /* 2. Apply the animations and cubic-bezier easing to your elements */
+    .right-part {
+        animation: spin-right 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
+
+    .left-part {
+        animation: spin-left 1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
 
     #Cross{
         transform-origin: center;
         animation: spin-right 1s;
+        transform-box: fill-box;
     }
     #Line{
         transform-origin: center;
         animation: spin-left 1s;
+        transform-box: fill-box;
     }
 
 
@@ -451,46 +395,9 @@ letter-spacing: -0.03em;
         .home-title-container{
             padding: 0;
         }
-        .home-title{
-            height: fit-content;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            padding: 0;
-            width: 100%;
-            max-width: 40rem;
-            .title-container{
-                justify-content: flex-start;
-                width: 100%;
-                svg{
-                    width: 4rem;
-                }
-            }
-            h1{
-                font-size: 5rem;
-                font-size: clamp(5rem, 8vw, 10rem);
-                padding: 0;
-                
-            }
-            h2{
-                align-self: flex-end;
-                line-height: 90%;
-                font-size: 3rem;
-                padding: 0.5rem 0;
-                width: 100%;
-                padding-left: clamp(1vw, 5vw, 3rem);
-            }
-            h3{
-                display: flex;
-                flex-direction: column;
-                padding: 0;
-                line-height: 100%;
-                font-size: 2rem;
-                padding-left: clamp(1vw, 5vw, 3rem);
-                width: 100%;
-                max-width: none;
-            }
-        }
+        // svg{
+        //     width: ;
+        // }
         .brand-lockup {
             font-size: 26px; /* Everything scales up cleanly by altering this one value */
         } 

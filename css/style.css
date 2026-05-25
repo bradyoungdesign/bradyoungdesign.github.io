@@ -582,6 +582,11 @@ footer h6 {
   justify-content: center;
   padding: 2rem 0;
   margin: auto;
+}
+.home svg {
+  overflow: visible;
+}
+.home {
   /* 1. THE PARENT CONTAINER (Controls the scale) */
 }
 .home .brand-lockup {
@@ -677,13 +682,47 @@ footer h6 {
 .home svg:hover #Line {
   transform: rotate(-180deg);
 }
+.home {
+  /* 1. Define the Keyframes cleanly */
+}
+@keyframes spin-right {
+  0% {
+    transform-origin: 50% 50%;
+    transform: rotate(0deg);
+  }
+  100% {
+    transform-origin: 50% 50%;
+    transform: rotate(180deg);
+  }
+}
+@keyframes spin-left {
+  0% {
+    transform-origin: 50% 50%;
+    transform: rotate(0deg);
+  }
+  100% {
+    transform-origin: 50% 50%;
+    transform: rotate(-180deg);
+  }
+}
+.home {
+  /* 2. Apply the animations and cubic-bezier easing to your elements */
+}
+.home .right-part {
+  animation: spin-right 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+.home .left-part {
+  animation: spin-left 1s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
 .home #Cross {
   transform-origin: center;
   animation: spin-right 1s;
+  transform-box: fill-box;
 }
 .home #Line {
   transform-origin: center;
   animation: spin-left 1s;
+  transform-box: fill-box;
 }
 
 .section-title-container {
@@ -861,46 +900,6 @@ footer h6 {
   }
   .home .home-title-container {
     padding: 0;
-  }
-  .home .home-title {
-    height: -moz-fit-content;
-    height: fit-content;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding: 0;
-    width: 100%;
-    max-width: 40rem;
-  }
-  .home .home-title .title-container {
-    justify-content: flex-start;
-    width: 100%;
-  }
-  .home .home-title .title-container svg {
-    width: 4rem;
-  }
-  .home .home-title h1 {
-    font-size: 5rem;
-    font-size: clamp(5rem, 8vw, 10rem);
-    padding: 0;
-  }
-  .home .home-title h2 {
-    align-self: flex-end;
-    line-height: 90%;
-    font-size: 3rem;
-    padding: 0.5rem 0;
-    width: 100%;
-    padding-left: clamp(1vw, 5vw, 3rem);
-  }
-  .home .home-title h3 {
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    line-height: 100%;
-    font-size: 2rem;
-    padding-left: clamp(1vw, 5vw, 3rem);
-    width: 100%;
-    max-width: none;
   }
   .home .brand-lockup {
     font-size: 26px; /* Everything scales up cleanly by altering this one value */
